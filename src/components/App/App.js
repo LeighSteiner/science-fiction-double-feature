@@ -5,29 +5,41 @@ import logo from './logo.svg';
 import './style.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.addSubmit = this.addSubmit.bind(this);
+    this.editSubmit = this.editSubmit.bind(this)
+  }
 
+  addSubmit(event){
+    event.preventDefault();
+    let newContent = {
+      title: event.target.title.value, 
+      author: event.target.author.value, 
+      publication: event.target.publication.value, 
+      genre: event.target.genre.value,
+    }
+  }
+  editSubmit(event){
+    event.preventDefault();
+    let newContent = {
+      title: event.target.title.value, 
+      author: event.target.author.value, 
+      publication: event.target.publication.value, 
+      genre: event.target.genre.value,
+    }
+    // dispatch(updateContentUnit())
+
+  }
   render() {
-    const { className, ...props } = this.props;
     return (
-      <div className={classnames('App', className)} {...props}>
-        <div className="App-header">
+      <div className="App">
+        <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React - Fullstack!</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Link to='about'><button>Test React Router</button></Link>
-        <br />
-        <br />
-        <button onClick={this.props.actions.expressTest}>Test if Express is working</button>
-        <br />
-        <br />
-        <button onClick={this.props.actions.dbTest}>Test if Express and Sequelize are working</button>
-        <div style={{ padding: '30px' }}>{this.props.results}</div>
+          <h1 className="App-title">Science Fiction Double Feature Space Depot</h1>
+        </header>
       </div>
     );
   }
 }
-
 export default App;

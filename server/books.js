@@ -1,5 +1,5 @@
 const db = require('../db') //this is required
-const Product = require('../db/models/book');
+const Book = require('../db/models/book');
 const Review = require('../db/models/review');
 
 const router = require('express').Router()
@@ -44,4 +44,5 @@ router.get('/genres/:genre', (req, res, next) => {
     where : { genre: req.params.genre}
    })
 })
+
 module.exports = router

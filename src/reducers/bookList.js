@@ -1,0 +1,33 @@
+import axios from 'axios';
+
+//action types -- contained in a variable to avoid typos 
+const GET_BOOK_LIST = 'GET_BOOK_LIST';
+const ADD_BOOK_TO_LIST = 'ADD_BOOK_TO_LIST';
+
+//initial state
+const bookList = [];
+
+//action creators
+export const getBookList = (books) => ({ type: GET_BOOK_LIST, books })
+export const addBookToList = (book) => ({ type: ADD_BOOK_TO_LIST, book})
+
+//thunk creators 
+export const fetchBookList = () => {
+ return function thunk(dispatch) {
+ 	return axios.get(`/api/books`)
+ 	.then( res => dispatch(getBookList(res.data)))
+ 	.catch( err => console.log(err))
+ }
+}
+
+//reducer 
+export default function (state = bookList, action) {
+  switch(action.type) {
+  	case GET_BOOK_LIST:
+  	  return action.books
+  	case ADD_BOOK_TO_LIST:
+  	  return [...state, action.book]
+  	default:
+  	  return state 
+  }
+}
