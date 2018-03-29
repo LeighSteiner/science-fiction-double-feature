@@ -12,4 +12,7 @@ const Reducers = combineReducers({
     routing: routerReducer,
 });
 
+export * from './bookList';
+export * from './singleBook';
+
 export default Reducers;
