@@ -29,7 +29,7 @@ router.put('/book/:id', (req, res, next) => {
   Book.findById(req.params.id)
   .then(book => book.update(req.body))
   .then(updatedBook => res.json(updatedBook))
-  .catch(book);
+  .catch(next);
 })
 
 router.post('/new-book', (req, res, next) => {

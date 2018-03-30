@@ -26,16 +26,6 @@ function mapDispatchToProps(dispatch) {
 	   }
 	   return dispatch(createBook(newContent)).then((action) => dispatch(addBookToList(action.book)))
     }, 
-    editSubmit: function(event) {
-      event.preventDefault();
-	  let newContent = {
-	      title: event.target.title.value, 
-	      author: event.target.author.value, 
-	      publicationDate: event.target.publicationDate.value, 
-	      genre: event.target.genre.value,
-	    }
-	    return dispatch(changeBook(newContent))
-    },
     loadBooks: function() {
       return dispatch(fetchBookList());
     }, 
