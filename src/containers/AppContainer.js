@@ -1,13 +1,15 @@
 import * as Actions from '../actions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { fetchBookList, fetchOneBook, changeBook, createBook } from '../reducers'
+import { fetchBookList, fetchOneBook, changeBook, createBook, addBookToList } from '../reducers'
 
 import App from '../components/App/App'
 
 function mapStateToProps(state) {
   return {
-    results: state.demo.results
+    results: state.demo.results,
+    bookList: state.bookList, 
+    singleBook: state.singleBook,
   }
 }
 
@@ -22,7 +24,7 @@ function mapDispatchToProps(dispatch) {
 	      publicationDate: event.target.publicationDate.value, 
 	      genre: event.target.genre.value,
 	   }
-	   console.log('wwooooo')	
+	   return dispatch(createBook(newContent)).then((action) => dispatch(addBookToList(action.book)))
     }, 
     editSubmit: function(event) {
       event.preventDefault();
@@ -32,29 +34,19 @@ function mapDispatchToProps(dispatch) {
 	      publicationDate: event.target.publicationDate.value, 
 	      genre: event.target.genre.value,
 	    }
+	    return dispatch(changeBook(newContent))
+    },
+    loadBooks: function() {
+      return dispatch(fetchBookList());
+    }, 
+    loadSingleBook: function(bookId) {
+      return dispatch(fetchOneBook(bookId));
+    },
+    loadNewBook: function(book) {
+     return dispatch(addBookToList(book))
     }
   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-
-//   addSubmit(event){
-//     event.preventDefault();
-//     let newContent = {
-//       title: event.target.title.value, 
-//       author: event.target.author.value, 
-//       publicationDate: event.target.publicationDate.value, 
-//       genre: event.target.genre.value,
-//     }
-//     console.log('new contnet', newContent)
-//   }
-//   editSubmit(event){
-//     event.preventDefault();
-//     let newContent = {
-//       title: event.target.title.value, 
-//       author: event.target.author.value, 
-//       publicationDate: event.target.publicationDate.value, 
-//       genre: event.target.genre.value,
-//     }
-// }

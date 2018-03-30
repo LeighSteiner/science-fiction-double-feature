@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
+  font-family: 'avenir next', avenir, sans-serif;
 }
 
 .App-logo {
@@ -18,7 +19,39 @@
   font-size: large;
 }
 
+li {
+  font-size: 1rem;
+  opacity: 1;
+  transition: opacity .15s ease-in;
+  border-radius: 9999px;
+  background-color: red;
+  /*padding-left:var(--spacing-medium);*/
+/*  padding-right:var(--spacing-medium); 
+  padding-top:var(--spacing-small);
+  padding-bottom:var(--spacing-small); 
+  margin-bottom:var(--spacing-small);  */ 
+  list-style-type: none;
+  display:inline-block;
+  padding: 5px;
+  margin:20px;
+}
+
+li:hover {   
+  opacity:.15;
+  transition:opacity .15s ease-in;
+}
+
+button {
+  border-radius: 9999px;
+  font-family: 'avenir next', avenir, sans-serif;
+}
+
+input {
+  border-radius: 9999px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/*"f6 link dim br-pill ph3 pv2 mb2 dib grayBackground"*/

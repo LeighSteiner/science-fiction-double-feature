@@ -33,9 +33,9 @@ export const changeBook = (id, book) => {
   }
 }
 
-export const createBrook = (book) => {
+export const createBook = (book) => {
   return function thunk(dispatch) {
-  	axios.post(`/api/books/new-book`, book)
+  	return axios.post(`/api/books/new-book`, book)
   	.then( res => dispatch(makeNewBook(res.data)))
   	.catch( err => console.log(err))
   }
