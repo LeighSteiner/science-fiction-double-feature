@@ -16,7 +16,9 @@ class App extends Component {
           <img src='https://static6.depositphotos.com/1073974/566/i/950/depositphotos_5668001-stock-photo-open-old-vintage-book-on.jpg' className="App-logo" alt="logo" />
           <h1 className="App-title">Science Fiction Double Feature Space Depot</h1>
         </header>
-        <BookList onSubmit={this.props.addSubmit} books={this.props.bookList}/>
+        { 
+         this.props.match.isExact ? <BookList onSubmit={this.props.addSubmit} books={this.props.bookList}/> : null 
+        }
       </div>
     );
   }
