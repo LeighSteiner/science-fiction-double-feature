@@ -63,7 +63,7 @@ class SingleBook extends Component {
  	      <div>
           <h2>{book.title} - {book.author} </h2>
           <p>{book.summary}</p>
-          <span>first published: {book.publicationDate} - {book.genre}</span> 
+          <span>first published: {book.publicationDate} - <em>{book.genre}</em></span> 
 
           </div>
  	      :null

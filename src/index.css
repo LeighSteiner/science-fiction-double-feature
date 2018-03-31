@@ -30,7 +30,9 @@ button {
   font-family: 'avenir next', avenir, sans-serif;
   background-color: #b9c4b4; 
   opacity: 1;
-  transition: opacity .15s ease-in; 
+  transition: opacity .15s ease-in;
+  margin-left: 3vw; 
+  margin-right: 3vw;
 }
 button:hover {
   opacity:.3;
@@ -60,6 +62,10 @@ h2 {
 p {
  padding-left: 10vw;
  padding-right: 10vw;
+}
+span {
+ margin-left: 60%;
+ margin-right: auto;
 }
 body {
   background-color: #dde5da;
