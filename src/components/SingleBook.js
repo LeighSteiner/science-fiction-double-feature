@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import ContentForm from './ContentForm';
 import ReviewForm from './ReviewForm';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
+
 import { fetchOneBook, changeBook, createReview } from '../reducers';
 
 class SingleBook extends Component {
   constructor(){
   	super();
     this.state ={
-      viewReviews : false
+      viewReviews : false, 
+      goHome : false,
     }
   	this.editSubmit = this.editSubmit.bind(this);
   	this.submitReview = this.submitReview.bind(this);
@@ -17,7 +20,7 @@ class SingleBook extends Component {
 
     editSubmit (event) {
       event.preventDefault();
-	  let newContent = {
+	    let newContent = {
 	      title: event.target.title.value || this.props.singleBook.title, 
 	      author: event.target.author.value || this.props.singleBook.author, 
 	      publicationDate: event.target.publicationDate.value || this.props.singleBook.publicationDate, 
@@ -37,7 +40,8 @@ class SingleBook extends Component {
     	event.preventDefault();
       console.log({text: event.target.review.value, book_id: this.props.singleBook.id})
       this.props.sendReview({text: event.target.review.value, book_id: this.props.singleBook.id})
-    	event.target.review.value = "";
+      .then(() =>  this.setState({ goHome: true }))
+      event.target.review.value = "";
 
     }
 
@@ -47,16 +51,20 @@ class SingleBook extends Component {
 
    componentDidMount(){
   	this.props.loadOneBook(this.props.match.params.id)
-    }
+   }
 
   render(){
+    let book = this.props.singleBook
+    console.log('book', book)
     return (
      <div>
  	    {
- 	      this.props.singleBook && this.props.singleBook.title ? 
+ 	       book && book.title ? 
  	      <div>
- 	      <span>{this.props.singleBook.title}</span> 
-          <span> {this.props.singleBook.author}</span>
+          <h2>{book.title} - {book.author} </h2>
+          <p>{book.summary}</p>
+          <span>first published: {book.publicationDate} - {book.genre}</span> 
+
           </div>
  	      :null
  	    }
@@ -71,6 +79,7 @@ class SingleBook extends Component {
       }
        <ContentForm onSubmit={this.editSubmit}/>
        <ReviewForm onSubmit={this.submitReview}/> 
+       { this.state.goHome ? <Redirect to='/' /> :null }
      </div>
  
     )

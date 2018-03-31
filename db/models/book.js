@@ -14,7 +14,7 @@ const Book = db.define('books', {
     defaultValue: 'Anonymous',
   },
   genre: {
-   type: Sequelize.STRING,
+   type: Sequelize.ENUM('hard scifi','cassette-punk','speculative fiction', 'Afrofuturism'),
   }, 
   summary: {
   	type: Sequelize.TEXT, 
