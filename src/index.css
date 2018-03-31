@@ -3,3 +3,51 @@ body {
   padding: 0;
   font-family: 'avenir next', avenir, sans-serif;
 }
+a {
+ text-decoration: none;
+ color:inherit;
+}
+
+li {
+  font-size: 1rem;
+  opacity: 1;
+  transition: opacity .15s ease-in;
+  border-radius: 9999px;
+  background-color: #b9c4b4;
+  list-style-type: none;
+  display:inline-block;
+  padding: 10px;
+  margin:20px;
+}
+
+li:hover {   
+  opacity:.3;
+  transition:opacity .15s ease-in;
+}
+
+button {
+  border-radius: 9999px;
+  font-family: 'avenir next', avenir, sans-serif;
+  background-color: #b9c4b4; 
+  opacity: 1;
+  transition: opacity .15s ease-in; 
+}
+button:hover {
+  opacity:.3;
+  transition:opacity .15s ease-in;  
+}
+input {
+  border-radius: 9999px;
+  border:none ;
+  height: 30px;
+  margin: 10px;
+}
+textarea {
+  border-radius: 9999px; 
+  border:none ;
+  height: 60px;
+  margin: 10px;
+}
+body {
+  background-color: #dde5da;
+}
