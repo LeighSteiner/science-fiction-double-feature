@@ -31,8 +31,8 @@ class SingleBook extends Component {
 
     submitReview(event){
     	event.preventDefault();
-      console.log({review_text: event.target.review.value, book_id: this.props.singleBook.id})
-      this.props.sendReview({review_text: event.target.review.value, book_id: this.props.singleBook.id})
+      console.log({text: event.target.review.value, book_id: this.props.singleBook.id})
+      this.props.sendReview({text: event.target.review.value, book_id: this.props.singleBook.id})
     	event.target.review.value = "";
 
     }

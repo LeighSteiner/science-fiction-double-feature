@@ -6,9 +6,9 @@ const review = '';
 
 const addReview = (review) => ({ type: ADD_REVIEW, review });
 
-export const createReview = () => {
+export const createReview = (review) => {
   return function thunk(dispatch) {
-  	return axios.post(`/api/reviews`)
+  	return axios.post(`/api/reviews`, review)
   	.then( res => dispatch(addReview(res.data)))
   	.catch( err => console.log(err) )
   }
