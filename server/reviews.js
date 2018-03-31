@@ -25,4 +25,11 @@ router.get('/:id', function(req, res, next) {
         .catch(next);
 });
 
+router.post('/', (req, res, next) => {
+    console.log('hi')
+  Review.create(req.body)
+  .then(newReview => res.json(newReview))
+  .catch(next)
+})
+
 module.exports = router;

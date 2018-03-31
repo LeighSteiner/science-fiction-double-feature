@@ -1,7 +1,6 @@
-.App {
-  /*text-align: center;*/
+/*.App {
   font-family: 'avenir next', avenir, sans-serif;
-}
+}*/
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -10,8 +9,8 @@
 
 .App-header {
   background-color: #b9c4b4;
-  height: 150px;
-  padding: 20px;
+  height: 80px;
+  padding: 10px;
   color: white;
 }
 
@@ -21,10 +20,7 @@
 
 a {
  text-decoration: none;
- color: black;
-}
-a: visited {
-  color: black;
+ color:inherit;
 }
 
 li {
@@ -35,7 +31,7 @@ li {
   background-color: #b9c4b4;
   list-style-type: none;
   display:inline-block;
-  padding: 5px;
+  padding: 10px;
   margin:20px;
 }
 
@@ -47,14 +43,33 @@ li:hover {
 button {
   border-radius: 9999px;
   font-family: 'avenir next', avenir, sans-serif;
+  background-color: #b9c4b4; 
+  opacity: 1;
+  transition: opacity .15s ease-in; 
 }
-
+button:hover {
+  opacity:.3;
+  transition:opacity .15s ease-in;  
+}
 input {
   border-radius: 9999px;
+  border:none ;
+  height: 30px;
+  margin: 10px;
+}
+textarea {
+  border-radius: 9999px; 
+  border:none ;
+  height: 60px;
+  margin: 10px;
+}
+body {
+  background-color: #dde5da;
 }
 
-@keyframes App-logo-spin {
+
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/
 /*"f6 link dim br-pill ph3 pv2 mb2 dib grayBackground"*/

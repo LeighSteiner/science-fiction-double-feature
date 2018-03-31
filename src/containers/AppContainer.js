@@ -24,7 +24,11 @@ function mapDispatchToProps(dispatch) {
 	      publicationDate: event.target.publicationDate.value, 
 	      genre: event.target.genre.value,
 	   }
-	   return dispatch(createBook(newContent)).then((action) => dispatch(addBookToList(action.book)))
+	    dispatch(createBook(newContent)).then((action) => dispatch(addBookToList(action.book)))
+	    event.target.title.value = "";
+	    event.target.author.value = "";
+	    event.target.publicationDate.value = ""
+	    event.target.genre.value = ""
     }, 
     loadBooks: function() {
       return dispatch(fetchBookList());

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import ContentForm from './ContentForm'
-import { connect } from 'react-redux'
-import { fetchOneBook, changeBook } from '../reducers'
+import ContentForm from './ContentForm';
+import ReviewForm from './ReviewForm';
+import { connect } from 'react-redux';
+import { fetchOneBook, changeBook, createReview } from '../reducers';
 
 class SingleBook extends Component {
   constructor(){
   	super();
   	this.editSubmit = this.editSubmit.bind(this);
+  	this.submitReview = this.submitReview.bind(this);
   }
 
-   editSubmit (event) {
+    editSubmit (event) {
       event.preventDefault();
 	  let newContent = {
 	      title: event.target.title.value || this.props.singleBook.title, 
@@ -17,12 +19,26 @@ class SingleBook extends Component {
 	      publicationDate: event.target.publicationDate.value || this.props.singleBook.publicationDate, 
 	      genre: event.target.genre.value || this.props.singleBook.genre,
 	    }
-	   return this.props.updateBook(this.props.match.params.id, newContent)
+	    
+	    this.props.updateBook(this.props.match.params.id, newContent)
+	    event.target.title.value = "";
+	    event.target.author.value = "";
+	    event.target.publicationDate.value = ""
+	    event.target.genre.value = ""
+	
 	           
     }
-  componentDidMount(){
+
+    submitReview(event){
+    	event.preventDefault();
+      console.log({review_text: event.target.review.value, book_id: this.props.singleBook.id})
+      this.props.sendReview({review_text: event.target.review.value, book_id: this.props.singleBook.id})
+    	event.target.review.value = "";
+
+    }
+   componentDidMount(){
   	this.props.loadOneBook(this.props.match.params.id)
-  }
+    }
   render(){
     return (
      <div>
@@ -35,6 +51,7 @@ class SingleBook extends Component {
  	      :null
  	    }
        <ContentForm onSubmit={this.editSubmit}/>
+       <ReviewForm onSubmit={this.submitReview}/> 
      </div>
  
     )
@@ -45,6 +62,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => ({
   loadOneBook: (id) => dispatch(fetchOneBook(id)), 
-  updateBook: (id, book) => dispatch(changeBook(id, book))
+  updateBook: (id, book) => dispatch(changeBook(id, book)), 
+  sendReview: (review) => dispatch(createReview(review)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(SingleBook);
