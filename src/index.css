@@ -48,6 +48,21 @@ textarea {
   height: 60px;
   margin: 10px;
 }
+h2 {
+ text-align: center;
+ color:white;
+ text-shadow:
+   -.5px -.5px 0 #000,  
+    .5px -.5px 0 #000,
+   -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+}
+p {
+ padding-left: 10vw;
+ padding-right: 10vw;
+}
 body {
   background-color: #dde5da;
+/*  display: grid;
+  grid-template-columns: 33%, 33%, auto; */
 }

@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         { /* <img src='https://static6.depositphotos.com/1073974/566/i/950/depositphotos_5668001-stock-photo-open-old-vintage-book-on.jpg' className="App-logo" alt="logo" /> */}
-          <h1 className="App-title"><Link to="/">Science Fiction Double Feature Space Depot     <i className="em em-rocket"></i> </Link></h1>
+          <h1 className="App-title"><Link to="/">Science Fiction Double Feature Space Depot     <i className="em em-rocket App-logo"></i> </Link></h1>
         </header>
         { 
          this.props.match.isExact ? <BookList onSubmit={this.props.addSubmit} books={this.props.bookList}/> : null 
