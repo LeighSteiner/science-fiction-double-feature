@@ -7,8 +7,12 @@ import { fetchOneBook, changeBook, createReview } from '../reducers';
 class SingleBook extends Component {
   constructor(){
   	super();
+    this.state ={
+      viewReviews : false
+    }
   	this.editSubmit = this.editSubmit.bind(this);
   	this.submitReview = this.submitReview.bind(this);
+    this.toggleReview = this.toggleReview.bind(this);
   }
 
     editSubmit (event) {
@@ -36,9 +40,15 @@ class SingleBook extends Component {
     	event.target.review.value = "";
 
     }
+
+    toggleReview(){
+      this.setState({viewReviews: !this.state.viewReviews});
+    }
+
    componentDidMount(){
   	this.props.loadOneBook(this.props.match.params.id)
     }
+
   render(){
     return (
      <div>
@@ -50,6 +60,15 @@ class SingleBook extends Component {
           </div>
  	      :null
  	    }
+      {!this.state.viewReviews && <button onClick={this.toggleReview}>View Reviews?</button>}
+      {this.state.viewReviews && 
+        <div className="review-list">
+        <ol>
+        {this.props.singleBook.reviews.map(review => <li key={review.id}>{review.text}</li>)}
+        </ol>
+        <button onClick={this.toggleReview}>Hide Reviews?</button>
+        </div>
+      }
        <ContentForm onSubmit={this.editSubmit}/>
        <ReviewForm onSubmit={this.submitReview}/> 
      </div>
