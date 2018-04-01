@@ -15,6 +15,9 @@ export default (props) => (
   	<option value="Afrofuturism">Afrofuturism</option>
    	<option value="speculative fiction">speculative fiction</option>
  </select>
+ <br/>
+ <label> Summary: </label> <br />
+ <textarea name="summary" />
  <button type="submit">let's go!</button>
  </form>
 )

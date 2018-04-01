@@ -72,7 +72,11 @@ form {
  padding-left: 3vw;
  padding-right: 3vw;
  padding-bottom: 2vw;
- margin-bottom: 10vh;
+ margin-bottom: 3vh;
+}
+select {
+ margin-left: 5px;
+ margin-right: 5px;
 }
 div.book-list > label {
  padding-left: 3vw;
