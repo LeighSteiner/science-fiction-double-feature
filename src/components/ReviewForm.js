@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => (
-<form onSubmit={props.onSubmit}>
+<form className="review-form" onSubmit={props.onSubmit}>
   <label>Review this book:</label>
   <br />
   <textarea name="review"/>

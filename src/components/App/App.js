@@ -43,7 +43,7 @@ class App extends Component {
          this.props.match.isExact ? (
           <div className="book-container">
             <BookList onSubmit={this.props.addSubmit} books={this.state.books}/> 
-            <div className="footer"> <i class="em em-last_quarter_moon_with_face"></i> sort by genre: <button name="all" onClick={this.onClick}> all </button> <button name ="hard scifi" onClick={this.onClick}> hard scifi </button> <button name="Afrofuturism" onClick={this.onClick}> Afrofuturism </button> <button name="cassette-punk" onClick={this.onClick}>cassette punk</button><button name= "speculative fiction" onClick={this.onClick}>speculative fiction</button></div>
+            <div className="footer"> <i className="em em-last_quarter_moon_with_face"></i> sort by genre: <button name="all" onClick={this.onClick}> all </button> <button name ="hard scifi" onClick={this.onClick}> hard scifi </button> <button name="Afrofuturism" onClick={this.onClick}> Afrofuturism </button> <button name="cassette-punk" onClick={this.onClick}>cassette punk</button><button name= "speculative fiction" onClick={this.onClick}>speculative fiction</button></div>
           </div>)
           : null 
         }

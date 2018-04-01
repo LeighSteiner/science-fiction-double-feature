@@ -44,12 +44,15 @@ input {
   border:none ;
   height: 30px;
   margin: 10px;
+  padding-left: 5px;
 }
 textarea {
   border-radius: 9999px; 
   border:none ;
   height: 60px;
   margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 h2 {
  text-align: center;
@@ -98,3 +101,7 @@ div.book-list > label {
    background-color: #9fa89c;
    border-color: #9fa89c;
  }
+.review-form{
+  float: right;
+  display: inline;
+}
