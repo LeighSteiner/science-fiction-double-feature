@@ -67,8 +67,19 @@ span {
  margin-left: 60%;
  margin-right: auto;
 }
+form {
+ padding-left: 3vw;
+ padding-right: 3vw;
+ padding-bottom: 2vw;
+}
+div.book-list > label {
+ padding-left: 3vw;
+}
 body {
   background-color: #dde5da;
+/*  padding-left: 1vw;
+  padding-right: 1vw;*/
 /*  display: grid;
   grid-template-columns: 33%, 33%, auto; */
 }
+

@@ -12,7 +12,6 @@ const Routes = () => {
       <div>
         <Route path="/" component={App} />
         <Route exact path="/book/:id" component={SingleBook} />
-        <Route exact path="/genre/:genre" component={BookList} />
       </div>
     </Router>
   )
