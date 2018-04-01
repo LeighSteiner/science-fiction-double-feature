@@ -34,6 +34,7 @@ button {
   transition: opacity .15s ease-in;
   margin-left: 3vw; 
   margin-right: 3vw;
+  height:25px;
 }
 button:hover {
   opacity:.3;
@@ -106,11 +107,17 @@ div.book-list > label {
   padding-bottom: 1vh;
   margin-top: 10px;
 }
+
  div.footer > button {
    background-color: #9fa89c;
    border-color: #9fa89c;
  }
-.review-form{
+
+.review-form {
   float: right;
   display: inline;
+}
+.alignment-container * {
+ vertical-align: middle;
+ display: inline;
 }

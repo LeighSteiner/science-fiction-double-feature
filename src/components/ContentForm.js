@@ -15,9 +15,10 @@ export default (props) => (
   	<option value="Afrofuturism">Afrofuturism</option>
    	<option value="speculative fiction">speculative fiction</option>
  </select>
- <br/>
- <label> Summary: </label> <br />
+ <div className="alignment-container">
+ <label> Summary: </label> 
  <textarea name="summary" />
- <button type="submit">let's go!</button>
+ </div>
+ <button type="submit">boom!</button>
  </form>
 )
