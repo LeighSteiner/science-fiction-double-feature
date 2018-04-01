@@ -80,6 +80,15 @@ form {
 select {
  margin-left: 5px;
  margin-right: 5px;
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none;       /* remove default arrow */
+ /*background-image: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-128.png);   /* add custom arrow */
+ padding: 7px;
+ border-color:#dde5da;
+ border-radius: 9999px; 
+ height: 30px;
+ background-color: white;
 }
 div.book-list > label {
  padding-left: 3vw;

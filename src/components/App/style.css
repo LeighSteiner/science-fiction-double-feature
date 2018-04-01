@@ -13,6 +13,14 @@
   height: 80px;
   padding: 10px;
   color: white;
+  text-align: center;
+  -moz-osx-font-smoothing:grayscale;
+  backface-visibility:hidden;
+  transform:translateZ(0);
+  transition:transform 0.25s ease-out;
+}
+.App-header:hover {
+  transform:scale(1.05);
 }
 
 .App-intro {
