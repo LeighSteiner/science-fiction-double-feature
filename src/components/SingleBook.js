@@ -25,13 +25,15 @@ class SingleBook extends Component {
 	      author: event.target.author.value || this.props.singleBook.author, 
 	      publicationDate: event.target.publicationDate.value || this.props.singleBook.publicationDate, 
 	      genre: event.target.genre.value || this.props.singleBook.genre,
+        summary: event.target.summary.value || this.props.singleBook.summary,
 	    }
 	    
-	    this.props.updateBook(this.props.match.params.id, newContent)
+	    this.props.updateBook(this.props.match.params.id, newContent);
 	    event.target.title.value = "";
 	    event.target.author.value = "";
-	    event.target.publicationDate.value = ""
-	    event.target.genre.value = ""
+	    event.target.publicationDate.value = "";
+	    event.target.genre.value = event.target.genre.value;
+      event.target.summary.value = "";
 	
 	           
     }
@@ -55,7 +57,6 @@ class SingleBook extends Component {
 
   render(){
     let book = this.props.singleBook
-    console.log('book', book)
     return (
      <div>
  	    {

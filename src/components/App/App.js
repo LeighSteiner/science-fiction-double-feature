@@ -33,7 +33,6 @@ class App extends Component {
     }
   }
   render() {
-    console.log('books?',  this.state.books)
     return (
       <div className="App">
         <header className="App-header">

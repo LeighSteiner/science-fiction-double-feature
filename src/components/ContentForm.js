@@ -8,7 +8,7 @@ export default (props) => (
  <input name="author" /> 
   <label>Publication Date:</label>
  <input name="publicationDate" /> 
-  <label>Genre</label>
+  <label>Genre:</label>
   <select name="genre">
  	<option value="hard scifi">hard scifi</option>
  	<option value="cassette-punk">cassette-punk</option>
