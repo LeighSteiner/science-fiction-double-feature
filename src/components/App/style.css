@@ -19,6 +19,11 @@
   font-size: large;
 }
 
+.em-last_quarter_moon_with_face{
+  float: left;
+  margin-left: 10px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

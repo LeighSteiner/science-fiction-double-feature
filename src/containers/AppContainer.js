@@ -28,7 +28,7 @@ function mapDispatchToProps(dispatch) {
 	    event.target.title.value = "";
 	    event.target.author.value = "";
 	    event.target.publicationDate.value = ""
-	    event.target.genre.value = ""
+	    event.target.genre.value = event.target.genre.value;
     }, 
     loadBooks: function() {
       return dispatch(fetchBookList());
