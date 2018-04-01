@@ -1,10 +1,6 @@
-/*.App {
-  font-family: 'avenir next', avenir, sans-serif;
-}*/
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  /*height: 80px;*/
   margin-left: 10px;
 }
 
@@ -36,4 +32,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-/*"f6 link dim br-pill ph3 pv2 mb2 dib grayBackground"*/
