@@ -16,7 +16,7 @@ export default (props) => (
    	<option value="speculative fiction">speculative fiction</option>
  </select>
  <div className="alignment-container">
- <label> Summary: </label> 
+ <label> Summary: </label> <br/>
  <textarea name="summary" />
  </div>
  <button type="submit">boom!</button>

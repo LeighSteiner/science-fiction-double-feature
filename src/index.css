@@ -6,7 +6,7 @@ body {
 }
 a {
  text-decoration: none;
- color:inherit;
+ color: inherit;
 }
 
 li {
@@ -16,48 +16,51 @@ li {
   border-radius: 9999px;
   background-color: #b9c4b4;
   list-style-type: none;
-  display:inline-block;
+  display: inline-block;
   padding: 10px;
-  margin:20px;
+  margin: 15px;
 }
 
 li:hover {   
-  opacity:.3;
-  transition:opacity .15s ease-in;
+  opacity: .3;
+  transition: opacity .15s ease-in;
 }
 
 button {
   border-radius: 9999px;
   font-family: 'avenir next', avenir, sans-serif;
+  font-size: 1em;
   background-color: #b9c4b4; 
   opacity: 1;
   transition: opacity .15s ease-in;
   margin-left: 3vw; 
   margin-right: 3vw;
-  height:25px;
+  padding: 5px;
 }
 button:hover {
-  opacity:.3;
-  transition:opacity .15s ease-in;  
+  opacity: .3;
+  transition: opacity .15s ease-in;  
 }
 input {
   border-radius: 9999px;
-  border:none ;
+  border: none;
   height: 30px;
   margin: 10px;
   padding-left: 5px;
 }
 textarea {
   border-radius: 9999px; 
-  border:none ;
-  height: 60px;
+  border: none;
+  height: 100px;
+  width: 50vw;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
   margin: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 h2 {
  text-align: center;
- color:white;
+ color: white;
  text-shadow:
    -.5px -.5px 0 #000,  
     .5px -.5px 0 #000,
@@ -76,17 +79,17 @@ form {
  padding-left: 3vw;
  padding-right: 3vw;
  padding-bottom: 2vw;
- margin-bottom: 3vh;
+ margin-bottom: 5vh;
+ text-align: center;
 }
 select {
  margin-left: 5px;
  margin-right: 5px;
    -webkit-appearance: none; 
    -moz-appearance: none;
-   appearance: none;       /* remove default arrow */
- /*background-image: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-128.png);   /* add custom arrow */
+   appearance: none;       
  padding: 7px;
- border-color:#dde5da;
+ border-color: #dde5da;
  border-radius: 9999px; 
  height: 30px;
  background-color: white;
@@ -111,13 +114,22 @@ div.book-list > label {
  div.footer > button {
    background-color: #9fa89c;
    border-color: #9fa89c;
+   height:25px;
+   padding:0px;
+   padding-left: 5px;
+   padding-right: 5px;
+   padding-top: 2px;
+   padding-bottom: 4px;
+   margin-bottom: 5px;
+   margin-top: 5px;
  }
 
-.review-form {
-  float: right;
-  display: inline;
-}
 .alignment-container * {
  vertical-align: middle;
  display: inline;
+}
+.flex-container: {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

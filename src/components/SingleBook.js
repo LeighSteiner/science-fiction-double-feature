@@ -78,8 +78,10 @@ class SingleBook extends Component {
         <button onClick={this.toggleReview}>Hide Reviews?</button>
         </div>
       }
+      <div className="flex-container">
        <ContentForm onSubmit={this.editSubmit}/>
        <ReviewForm onSubmit={this.submitReview}/> 
+      </div>
        { this.state.goHome ? <Redirect to='/' /> :null }
      </div>
  
