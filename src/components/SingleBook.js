@@ -41,9 +41,10 @@ class SingleBook extends Component {
     submitReview(event){
     	event.preventDefault();
       console.log({text: event.target.review.value, book_id: this.props.singleBook.id})
-      this.props.sendReview({text: event.target.review.value, book_id: this.props.singleBook.id})
+      this.props.sendReview({text: event.target.review.value, rating: event.target.rating.value, book_id: this.props.singleBook.id})
       .then(() =>  this.setState({ goHome: true }))
       event.target.review.value = "";
+      event.target.rating.value = event.target.rating.value
 
     }
 
@@ -73,7 +74,7 @@ class SingleBook extends Component {
       {this.state.viewReviews && 
         <div className="review-list">
         <ol>
-        {this.props.singleBook.reviews && this.props.singleBook.reviews.length? this.props.singleBook.reviews.map(review => <li key={review.id}>{review.text}</li>) : <li> no reviews. write one! </li>}
+        {this.props.singleBook.reviews && this.props.singleBook.reviews.length? this.props.singleBook.reviews.map(review => <li key={review.id}>{review.rating} - {review.text}</li>) : <li> no reviews. write one! </li>}
         </ol>
         <button onClick={this.toggleReview}>Hide Reviews?</button>
         </div>
