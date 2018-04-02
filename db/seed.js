@@ -17,11 +17,13 @@ const seedReviews = () => db.Promise.map([
  {rating: 1, text: "too many machines",book_id:5},
  {rating: 1, text: "not enough machines ",book_id:1},
  {rating: 5, text: "the best!",book_id:2},
- {rating: 2, text: "waste of money",book_id:3},
+ {rating: 2, text: "i wish it were longer",book_id:3},
  {rating: 3, text: "should have been more robots",book_id:4},
  {rating: 3, text: "should be better",book_id:6},
  {rating: 4, text: "blew my mind",book_id:7},
- {rating: 4, text: "just the right amount of robots",book_id:1}
+ {rating: 4, text: "just the right amount of robots",book_id:1},
+ {rating: 3, text: "everyone should have listened to ripley",book_id:8},
+ {rating: 4, text: "better than the movie, not as good as alien 4",book_id:8}
  ], review => db.model('reviews').create(review));
 
  db.didSync
