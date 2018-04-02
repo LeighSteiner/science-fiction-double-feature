@@ -1,21 +1,17 @@
-import * as Actions from '../actions'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
-import { fetchBookList, fetchOneBook, changeBook, createBook, addBookToList } from '../reducers'
+import { fetchBookList, fetchOneBook, createBook, addBookToList } from '../reducers'
 
 import App from '../components/App/App'
 
 function mapStateToProps(state) {
   return {
-    results: state.demo.results,
     bookList: state.bookList, 
     singleBook: state.singleBook,
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(Actions, dispatch), 
+  return { 
     addSubmit: function(event) {
       event.preventDefault();
 	  let newContent = {

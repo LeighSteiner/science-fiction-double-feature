@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import demo from './demo';
+// import demo from './demo';
 import bookList from './bookList';
 import singleBook from './singleBook';
 import review from './review'
 
 const Reducers = combineReducers({
-    demo,
+    // demo,
     singleBook, 
     bookList,
     review,
