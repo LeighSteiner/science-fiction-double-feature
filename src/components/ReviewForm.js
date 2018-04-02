@@ -5,7 +5,7 @@ export default (props) => (
   <label>Review this book:</label>
   <br />
   <textarea name="review"/> 
-  <label>Rating:</label>
+  <label className="review-label">Rating:</label>
   <select name="rating">
   	<option value="5" >5</option>
   	<option value="4" >4</option>
