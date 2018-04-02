@@ -6,6 +6,6 @@ export default (props) => (
   <br />
   <textarea name="review"/>
   <br />
-  <button type="submit"> Tell us what you really think: </button>
+  <button type="submit">Tell us what you really think</button>
 </form>
 )
