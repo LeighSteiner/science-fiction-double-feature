@@ -73,7 +73,7 @@ class SingleBook extends Component {
       {this.state.viewReviews && 
         <div className="review-list">
         <ol>
-        {this.props.singleBook.reviews.map(review => <li key={review.id}>{review.text}</li>)}
+        {this.props.singleBook.reviews.length? this.props.singleBook.reviews.map(review => <li key={review.id}>{review.text}</li>) : <li> no reviews. write one! </li>}
         </ol>
         <button onClick={this.toggleReview}>Hide Reviews?</button>
         </div>
